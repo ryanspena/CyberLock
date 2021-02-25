@@ -37,6 +37,10 @@ if (hasLC === true) {
   count--;
 }
 
+for (let i = 0; i < count; i++) {
+  generatedPassword+=possibleCharacters[Math.floor (Math.random() * possibleCharacters.length)];
+}
+return generatedPassword;
 }
 
 // Get references to the #generate element
