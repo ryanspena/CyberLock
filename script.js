@@ -1,7 +1,7 @@
 // Assignment code here
 let lowerCase = "abcedfghijklmnopqrstuvwxyz";
 let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
-let numberals = "0123456789"; 
+let numberalCharacters = "0123456789"; 
 let specialCharacters = "!@#$%^&*";
 let possibleCharacters = "";
 let generatedPassword = "";
@@ -23,17 +23,39 @@ count = passwordLength;
 
 let hasLC = confirm ("Do you want to include LowerCase letters?");
 let hasUC = confirm ("Do you want to include UpperCase letters?");
-let hasNM = confirm ("Do you want to include numbers?");
-let hasSP = confirm ("Do you want ti include symbols?");
+let hasNC = confirm ("Do you want to include numbers?");
+let hasSP = confirm ("Do you want to include symbols?");
 
-if (hasLC === false && hasUC === false && hasNM === false && hasSP === false) {
+if (hasLC === false && hasUC === false && hasNC === false && hasSP === false) {
   alert ("At least one character type needs to be selected");
   return ("Enter at least one selection.");
 }
+
 if (hasLC === true) {
   possibleCharacters+= lowerCase;
   generatedPassword+= lowerCase [Math.floor (Math.random() * lowerCase.length)];
   console.log("Generated password" , generatedPassword);
+  count--;
+}
+
+if (hasUC === true) {
+  possibleCharacters+= upperCase;
+  generatedPassword+= upperCase [Math.floor (Math.random() * upperCase.length)];
+  console.log ("Generated password" , generatedPassword);
+  count--;
+}
+
+if (hasNC === true) {
+  possibleCharacters+= numberalCharacters;
+  generatedPassword+= numberalCharacters [Math.floor (Math.random() * numberalCharacters.length)];
+  console.log ("generated password" , generatedPassword);
+  count--;
+}
+
+if (hasSP === true) {
+  possibleCharacters+= specialCharacters;
+  generatedPassword+= specialCharacters [Math.floor (Math.random() * specialCharacters.length)];
+  console.log ("generated password" , generatedPassword);
   count--;
 }
 
