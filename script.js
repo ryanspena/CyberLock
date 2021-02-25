@@ -1,15 +1,15 @@
 // Assignment code here
-let lowerCase = "abcedfghijklmnopqrstuvwxyz";
-let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
-let numberalCharacters = "0123456789"; 
-let specialCharacters = "!@#$%^&*";
-let possibleCharacters = "";
-let generatedPassword = "";
-let count = 0;
+var lowerCase = "abcedfghijklmnopqrstuvwxyz";
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+var numberalCharacters = "0123456789"; 
+var specialCharacters = "$!#'%()*+&,-./:;<=>?@[^]_`{|}~";
+var possibleCharacters = "";
+var generatedPassword = "";
+var count = 0;
 
 function generatePassword() {
 
-let passwordLength = parseInt (prompt ("How many characters do you want?"));
+var passwordLength = parseInt (prompt ("How many characters do you want?"));
 console.log("passwordLength" , passwordLength);
 if (isNaN(passwordLength) == true) {
   alert ("Password length must be provided as a number");
@@ -21,10 +21,10 @@ if (passwordLength < 12 && passwordLength > 128 ) {
 }
 count = passwordLength;
 
-let hasLC = confirm ("Do you want to include LowerCase letters?");
-let hasUC = confirm ("Do you want to include UpperCase letters?");
-let hasNC = confirm ("Do you want to include numbers?");
-let hasSP = confirm ("Do you want to include symbols?");
+var hasLC = confirm ("Do you want to include LowerCase letters?");
+var hasUC = confirm ("Do you want to include UpperCase letters?");
+var hasNC = confirm ("Do you want to include numbers?");
+var hasSP = confirm ("Do you want to include symbols?");
 
 if (hasLC === false && hasUC === false && hasNC === false && hasSP === false) {
   alert ("At least one character type needs to be selected");
@@ -59,7 +59,7 @@ if (hasSP === true) {
   count--;
 }
 
-for (let i = 0; i < count; i++) {
+for (var i = 0; i < count; i++) {
   generatedPassword+=possibleCharacters[Math.floor (Math.random() * possibleCharacters.length)];
 }
 return generatedPassword;
