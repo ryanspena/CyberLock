@@ -9,6 +9,9 @@ var count = 0;
 
 function generatePassword() {
 
+var possibleCharacters = "";
+var generatedPassword = "";
+
 var passwordLength = parseInt (prompt ("How many characters do you want?"));
 console.log("passwordLength" , passwordLength);
 if (isNaN(passwordLength) == true) {
