@@ -1,4 +1,10 @@
 // Assignment code here
+var possibleCharacters = "";
+var generatedPassword = "";
+
+
+function generatePassword() {
+
 var lowerCase = "abcedfghijklmnopqrstuvwxyz";
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
 var numberalCharacters = "0123456789"; 
@@ -6,11 +12,6 @@ var specialCharacters = "$!#'%()*+&,-./:;<=>?@[^]_`{|}~";
 var possibleCharacters = "";
 var generatedPassword = "";
 var count = 0;
-
-function generatePassword() {
-
-var possibleCharacters = "";
-var generatedPassword = "";
 
 var passwordLength = parseInt (prompt ("How many characters do you want?"));
 console.log("passwordLength" , passwordLength);
