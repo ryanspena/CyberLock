@@ -1,10 +1,7 @@
 // Assignment code here
-var possibleCharacters = "";
-var generatedPassword = "";
-
-
 function generatePassword() {
 
+// variables to string character choices
 var lowerCase = "abcedfghijklmnopqrstuvwxyz";
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
 var numberalCharacters = "0123456789"; 
@@ -12,6 +9,8 @@ var specialCharacters = "$!#'%()*+&,-./:;<=>?@[^]_`{|}~";
 var possibleCharacters = "";
 var generatedPassword = "";
 var count = 0;
+
+// variable to determine password count
 
 var passwordLength = parseInt (prompt ("How many characters would you like?"));
 console.log("passwordLength" , passwordLength);
@@ -25,10 +24,14 @@ if (passwordLength < 12 || passwordLength > 128 ) {
 }
 count = passwordLength;
 
+// bolleon variables for the character options
+
 var hasLC = confirm ("Do you want to include LowerCase letters?");
 var hasUC = confirm ("Do you want to include UpperCase letters?");
 var hasNC = confirm ("Do you want to include numbers?");
 var hasSP = confirm ("Do you want to include symbols?");
+
+// prompt to request at least selection for password generator
 
 if (hasLC === false && hasUC === false && hasNC === false && hasSP === false) {
   alert ("At least one character type must be selected");
