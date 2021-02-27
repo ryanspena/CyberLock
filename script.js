@@ -13,14 +13,14 @@ var possibleCharacters = "";
 var generatedPassword = "";
 var count = 0;
 
-var passwordLength = parseInt (prompt ("How many characters do you want?"));
+var passwordLength = parseInt (prompt ("How many characters would you like?"));
 console.log("passwordLength" , passwordLength);
 if (isNaN(passwordLength) == true) {
   alert ("Password length must be provided as a number");
-  return ("Invalid input of password not generated.");
+  return ("Invalid input. Password not generated.");
 }
 if (passwordLength < 12 || passwordLength > 128 ) {
-  alert ("Incorrect");
+  alert ("Password must be at least 12 to 128 characters.");
   return ("Password not generated");
 }
 count = passwordLength;
@@ -31,8 +31,8 @@ var hasNC = confirm ("Do you want to include numbers?");
 var hasSP = confirm ("Do you want to include symbols?");
 
 if (hasLC === false && hasUC === false && hasNC === false && hasSP === false) {
-  alert ("At least one character type needs to be selected");
-  return ("Enter at least one selection.");
+  alert ("At least one character type must be selected");
+  return ("Select which characters to include.");
 }
 
 if (hasLC === true) {
@@ -66,6 +66,7 @@ if (hasSP === true) {
 for (var i = 0; i < count; i++) {
   generatedPassword+=possibleCharacters[Math.floor (Math.random() * possibleCharacters.length)];
 }
+console.log(generatedPassword);
 return generatedPassword;
 }
 
